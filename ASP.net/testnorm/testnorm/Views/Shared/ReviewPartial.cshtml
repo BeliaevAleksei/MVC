@@ -1,0 +1,16 @@
+﻿@model List<testnorm.Models.BookReview>
+
+@foreach (var review in Model)
+{
+    <p>
+        <b>@Html.DisplayNameFor(m => review.Id)</b>
+        <br/>
+        @Html.DisplayFor(m => review.Id)
+    </p>
+    
+    <p>
+        <b>@Html.DisplayNameFor(m => review.Review)</b>
+        <br/>
+        @Html.DisplayFor(m => review.Review)
+    </p>
+}

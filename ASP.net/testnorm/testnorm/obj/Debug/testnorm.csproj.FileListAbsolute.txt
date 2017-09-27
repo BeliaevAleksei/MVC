@@ -1,0 +1,50 @@
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\obj\Debug\testnorm.csprojResolveAssemblyReference.cache
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\testnorm.dll.config
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\testnorm.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\testnorm.pdb
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\Microsoft.Web.Infrastructure.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\Newtonsoft.Json.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Net.Http.Formatting.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.Helpers.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.Http.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.Http.WebHost.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.Mvc.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.Razor.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.WebPages.Deployment.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.WebPages.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.WebPages.Razor.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\Newtonsoft.Json.xml
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Net.Http.Formatting.xml
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.Helpers.xml
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.Http.xml
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.Http.WebHost.xml
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.Mvc.xml
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.Razor.xml
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.WebPages.xml
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.WebPages.Deployment.xml
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\bin\System.Web.WebPages.Razor.xml
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\obj\Debug\testnorm.dll
+h:\documents\visual studio 2013\Projects\testnorm\testnorm\obj\Debug\testnorm.pdb
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\testnorm.dll.config
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\testnorm.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\testnorm.pdb
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\Microsoft.Web.Infrastructure.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\Newtonsoft.Json.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.Helpers.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.Mvc.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.Razor.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.WebPages.Deployment.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.WebPages.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.WebPages.Razor.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\Newtonsoft.Json.xml
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.Helpers.xml
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.Mvc.xml
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.Razor.xml
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.WebPages.xml
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.WebPages.Deployment.xml
+D:\Мои документы\учеба\asp\testnorm\testnorm\bin\System.Web.WebPages.Razor.xml
+D:\Мои документы\учеба\asp\testnorm\testnorm\obj\Debug\testnorm.csprojResolveAssemblyReference.cache
+D:\Мои документы\учеба\asp\testnorm\testnorm\obj\Debug\testnorm.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\obj\Debug\testnorm.pdb

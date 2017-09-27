@@ -1,0 +1,38 @@
+﻿@model testnorm.Models.Book
+@using testnorm
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <fieldset>
+        <legend>Book</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Author)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Author)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Genre)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Genre)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Изменить", "EditBook", new { id=Model.Id }) |
+        @Html.ActionLink("Возвратиться", "Index") |
+        @Html.ActionLink("Добавить отзыв", "Create", "Review", new { bookId = Model.Id }, null)
+    </p>
+
+@Html.Partial("ReviewPartial", testnorm.Models.BaseTest.instance.Rewiews.Where(x => x.Id == Model.Id).ToList())

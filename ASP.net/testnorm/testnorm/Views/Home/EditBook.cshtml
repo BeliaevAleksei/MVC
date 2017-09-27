@@ -1,0 +1,60 @@
+﻿@model testnorm.Models.Book
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditBook</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    @using (Html.BeginForm()) {
+    
+        <fieldset>
+            <legend>Book</legend>
+    
+            @Html.HiddenFor(model => model.Id)
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Author)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Author)
+                @Html.ValidationMessageFor(model => model.Author)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Genre)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Genre)
+                @Html.ValidationMessageFor(model => model.Genre)
+            </div>
+    
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>
