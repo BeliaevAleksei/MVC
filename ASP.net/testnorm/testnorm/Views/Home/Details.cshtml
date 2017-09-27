@@ -35,4 +35,4 @@
         @Html.ActionLink("Добавить отзыв", "Create", "Review", new { bookId = Model.Id }, null)
     </p>
 
-@Html.Partial("ReviewPartial", testnorm.Models.BaseTest.instance.Rewiews.Where(x => x.Id == Model.Id).ToList())
+@Html.Partial("ReviewPartial", testnorm.Models.BaseTest.instance.Rewiews.Where(x => x.IdBook == Model.Id).ToList())
