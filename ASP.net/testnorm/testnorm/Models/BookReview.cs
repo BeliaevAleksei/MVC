@@ -11,10 +11,11 @@ namespace testnorm.Models
         public int Id { get; set; }
         [Display(Name = "Автор")]
         public String Name { get; set; }
-
+        [Display(Name = "Название книги")]
         public String BookName { get; set; }
         [Display(Name = "Отзыв")]
         public String Review { get; set; }
+
         public int IdBook { get; set; }
     }
 }
