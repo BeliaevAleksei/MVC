@@ -12,9 +12,9 @@ namespace testnorm.Models
         
         [Display(Name = "Автор")]
         public string Author { get; set; }
-
+        [Display(Name = "Название Книги")]
         public string Name { get; set; }
-
+        [Display(Name = "Жанр")]
         public string Genre { get; set; }
     }
 }

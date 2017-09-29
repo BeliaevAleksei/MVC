@@ -80,7 +80,7 @@ namespace testnorm.Models
 			};
 
 			Rewiews.Add(review);
-			_bookId = 1;
+			_bookId = 2;
 			_reviewId = 1;
 
 		}

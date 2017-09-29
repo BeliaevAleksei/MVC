@@ -32,7 +32,7 @@
     <p>
         @Html.ActionLink("Изменить", "EditBook", new { id=Model.Id }) |
         @Html.ActionLink("Возвратиться", "Index") |
-        @Html.ActionLink("Добавить отзыв", "Create", "Review", new { bookId = Model.Id }, null)
+        @Html.ActionLink("Добавить отзыв", "Create", "Review", new { bookId = Model.Id, BookName = Model.Name, Name = Model.Author }, null)
     </p>
 
-@Html.Partial("ReviewPartial", testnorm.Models.BaseTest.instance.Rewiews.Where(x => x.Id == Model.Id).ToList())
+@Html.Partial("ReviewPartial", testnorm.Models.BaseTest.instance.Rewiews.Where(x => x.IdBook == Model.Id).ToList())
