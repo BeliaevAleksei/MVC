@@ -3,14 +3,7 @@
 @foreach (var review in Model)
 {
     <p>
-        <b>@Html.DisplayNameFor(m => review.Id)</b>
-        <br/>
-        @Html.DisplayFor(m => review.Id)
+        <h4>@Html.DisplayFor(m => review.Name): <small>  @Html.DisplayFor(m => review.Review) </small></h4> 
     </p>
-    
-    <p>
-        <b>@Html.DisplayNameFor(m => review.Review)</b>
-        <br/>
-        @Html.DisplayFor(m => review.Review)
-    </p>
+    <hr />
 }

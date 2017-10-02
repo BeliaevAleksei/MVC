@@ -16,10 +16,11 @@
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     
+    <h2> Редактирование книги </h2>
+    <hr />
     @using (Html.BeginForm()) {
     
         <fieldset>
-            <legend>Book</legend>
     
             @Html.HiddenFor(model => model.Id)
     
@@ -46,15 +47,16 @@
                 @Html.EditorFor(model => model.Genre)
                 @Html.ValidationMessageFor(model => model.Genre)
             </div>
-    
+   
+            <br/>
             <p>
-                <input type="submit" value="Save" />
+                <input type="submit" value="Изменить" />
             </p>
         </fieldset>
     }
     
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Возврат", "Index")
     </div>
 </body>
 </html>

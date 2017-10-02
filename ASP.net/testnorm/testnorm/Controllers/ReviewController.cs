@@ -12,26 +12,26 @@ namespace testnorm.Controllers
         //
         // GET: /Review/
 
-        public ActionResult Create(int BookId)
+        public ActionResult Create(int BookId, string BookName)
         {
             if(BaseTest.instance.Books.All(x => x.Id != BookId))
                 return HttpNotFound();
-            var review = new BookReview() { IdBook = BookId };
-            return View(review);
+            var reviews = new BookReview() { IdBook = BookId, BookName = BookName };
+            return View(reviews);
         }
 
         [HttpPost]
-        public ActionResult Create(BookReview review)
+        public ActionResult Create(BookReview reviews)
         {
             if (ModelState.IsValid)
             {
-                BaseTest.instance.AddReview(review);
+                BaseTest.instance.AddReview(reviews);
             }
             else
             {
                 ModelState.AddModelError("Create", "Something wrong!");
             }
-            return RedirectToAction("Details", "Book", new { id = review.IdBook });
+            return RedirectToAction("Details", "Home", new { id = reviews.IdBook });
         }
 
     }

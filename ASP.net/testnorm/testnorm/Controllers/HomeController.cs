@@ -17,7 +17,15 @@ namespace testnorm.Controllers
             var books = BaseTest.instance.Books;
             return View(books);
         }
+        public ActionResult About()
+        {
+            return View();
+        }
 
+        public ActionResult Contact()
+        {
+            return View();
+        }
 
         public ActionResult Details(int Id = 1)
         {
@@ -44,7 +52,7 @@ namespace testnorm.Controllers
         {
             BaseTest.instance.Books.RemoveAll(x => x.Id == book.Id);
             BaseTest.instance.Books.Add(book);
-            return View(book);
+            return RedirectToAction("Details", "Home");
         }
     }
 }

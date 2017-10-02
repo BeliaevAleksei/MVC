@@ -3,14 +3,15 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@foreach (var book in Model)
+    
+    @foreach (var book in Model)
 {
-    <h1>@book.Name</h1>
-    <p>@book.Genre</p>
-    <p>@book.Author</p>
-    <div>
-        @Html.ActionLink("Информация","Details", new { id = book.Id }, null)
-    </div>
-}
+        <h2>Название книги: @book.Name</h2>
+        <p>Жанр: @book.Genre</p>
+        <p>Автор: @book.Author</p>
+        @Html.ActionLink("Информация", "Details", new { id = book.Id }, null)     
+        <hr />        
+}  
+@Html.ActionLink("Добавить книгу", "../book/CreateBook")  
+
 
