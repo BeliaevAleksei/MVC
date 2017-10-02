@@ -14,6 +14,7 @@ namespace testnorm.Controllers
 
         public ActionResult Index()
         {
+            BaseTest.instance.Books.Sort();
             var books = BaseTest.instance.Books;
             return View(books);
         }
@@ -52,7 +53,7 @@ namespace testnorm.Controllers
         {
             BaseTest.instance.Books.RemoveAll(x => x.Id == book.Id);
             BaseTest.instance.Books.Add(book);
-            return RedirectToAction("Details", "Home");
+            return RedirectToAction("Details", "Home", new { id = book.Id });
         }
     }
 }

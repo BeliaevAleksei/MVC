@@ -102,3 +102,4 @@ D:\Мои документы\учеба\asp\testnorm\testnorm\bin\ko\System.Spat
 D:\Мои документы\учеба\asp\testnorm\testnorm\bin\ru\System.Spatial.resources.dll
 D:\Мои документы\учеба\asp\testnorm\testnorm\bin\zh-Hans\System.Spatial.resources.dll
 D:\Мои документы\учеба\asp\testnorm\testnorm\bin\zh-Hant\System.Spatial.resources.dll
+D:\Мои документы\учеба\asp\testnorm\testnorm\obj\Debug\testnorm.csprojResolveAssemblyReference.cache

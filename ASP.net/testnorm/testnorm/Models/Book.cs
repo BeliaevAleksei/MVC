@@ -6,7 +6,7 @@ using System.Web;
 
 namespace testnorm.Models
 {
-    public class Book
+    public class Book: IComparable<Book>
     {
         public int Id { get; set; }
 
@@ -16,21 +16,10 @@ namespace testnorm.Models
         public string Name { get; set; }
         [Display(Name = "Жанр")]
         public string Genre { get; set; }
-    }
 
-    //class Book : IComparer<Book>
-    //{
-    //    public int Compare(string[] o1, string[] o2)
-    //    {
-    //        if (o1[1].Length > o2[1].Length)
-    //        {
-    //            return 1;
-    //        }
-    //        else if (o1[1].Length < o2[1].Length)
-    //        {
-    //            return -1;
-    //        }
-    //        return 0;
-    //    }
-    //}
+        public int CompareTo(Book book)
+        {
+            return string.Compare(this.Name, book.Name, StringComparison.OrdinalIgnoreCase);
+        }
+    }
 }
