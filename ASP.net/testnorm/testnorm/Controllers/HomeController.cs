@@ -55,5 +55,6 @@ namespace testnorm.Controllers
             BaseTest.instance.Books.Add(book);
             return RedirectToAction("Details", "Home", new { id = book.Id });
         }
+
     }
 }

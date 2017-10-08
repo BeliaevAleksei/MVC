@@ -33,56 +33,56 @@ namespace testnorm.Models
 
 
         public void AddBook(Book newBook)
-		{
-			_bookId++;
-			newBook.Id = _bookId;
-			Books.Add(newBook);
-		}
+        {
+            _bookId++;
+            newBook.Id = _bookId;
+            Books.Add(newBook);
+        }
 
-		public void AddReview(BookReview newReview)
-		{
-			_reviewId++;
-			newReview.Id = _reviewId;
-			Rewiews.Add(newReview);
-		}
+        public void AddReview(BookReview newReview)
+        {
+            _reviewId++;
+            newReview.Id = _reviewId;
+            Rewiews.Add(newReview);
+        }
 
-		private static int _bookId;
+        private static int _bookId;
 
-		private static int _reviewId;
+        private static int _reviewId;
 
-		private BaseTest()
-		{
-			Book book = new Book()
-			{
+        private BaseTest()
+        {
+            Book book = new Book()
+            {
                 Id = 1,
                 Author = "SomeOne1",
                 Genre = "Fen",
                 Name = "hz"
-			};			
-			
-			Book book1 = new Book()
-			{
+            };
+
+            Book book1 = new Book()
+            {
                 Id = 2,
                 Author = "SomeOne2",
                 Genre = "ThusRoDuh",
                 Name = "hz2"
-			};
+            };
 
-			Books.AddRange(new List<Book>(){book,book1});
+            Books.AddRange(new List<Book>() { book, book1 });
 
-			BookReview review = new BookReview()
-			{
+            BookReview review = new BookReview()
+            {
                 Id = 1,
                 BookName = "ono",
                 Name = "ononos",
                 Review = "tak se",
                 IdBook = 1
-			};
+            };
 
-			Rewiews.Add(review);
-			_bookId = 2;
-			_reviewId = 1;
+            Rewiews.Add(review);
+            _bookId = 2;
+            _reviewId = 1;
 
-		}
+        }
     }
 }

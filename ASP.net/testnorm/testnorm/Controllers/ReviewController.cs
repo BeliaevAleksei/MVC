@@ -34,5 +34,32 @@ namespace testnorm.Controllers
             return RedirectToAction("Details", "Home", new { id = reviews.IdBook });
         }
 
+        [HttpPost]
+        public void ReportOffensiveReview(int reviewId, string reason)
+        {
+            var review = BaseTest.Instance.Reviews.FirstOrDefault(x => x.Id == reviewId);
+            if (review == null)
+            {
+                Response.StatusCode = 404;
+                return;
+            }
+
+            review.IsOffensive = true;
+            review.ReportReason = reason;
+        }
+
+        [HttpPost]
+        public int IncrementAndGetLikes(int reviewId)
+        {
+            var review = BaseTest.Instance.Reviews.FirstOrDefault(x => x.Id == reviewId);
+            if (review == null)
+            {
+                Response.StatusCode = 404;
+                return -1;
+            }
+
+            return ++review.Likes;
+        }
+
     }
 }

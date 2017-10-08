@@ -11,10 +11,10 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/site.css" rel="stylesheet" />
     <title>_Layout</title>
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <div class="container navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -31,11 +31,9 @@
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
+    <div class="container">
         @RenderBody()
     </div>
-        <script src="~/Scripts/jquery-1.8.3.js"></script>
         <script src="~/Scripts/jquery.validate.js"></script>
         <script src="~/Scripts/jquery.validate.unobtrusive.bootstrap.js"></script>
         <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>

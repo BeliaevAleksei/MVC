@@ -10,9 +10,9 @@
 @using (Html.BeginForm()) {
 
     <fieldset>
-        
-        @Html.HiddenFor(m => Model.IdBook)
-
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.IdBook)
+        </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.Name)
         </div>
@@ -21,18 +21,21 @@
             @Html.ValidationMessageFor(model => model.Name)
         </div>
 
+
         <div class="editor-label">
             @Html.LabelFor(model => model.Review)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Review)
+            @Html.TextAreaFor(model => model.Review, new { maxlength = 5000 })
             @Html.ValidationMessageFor(model => model.Review)
         </div>
         <br/>
         <p>
-            <input type="submit" value="Добавить" />
+            <input class="btn" id="createbtn" type="submit" value="Добавить" />
         </p>
     </fieldset>
+    
+<script src="~/Scripts/checkReview.js"></script>
 }
 
 <div>
