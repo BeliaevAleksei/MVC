@@ -9,8 +9,18 @@ namespace testnorm.Controllers
 {
     public class BookController : Controller
     {
-        //
-        // GET: /Book/
+        private IBookContext _bookContext;
+
+        public BookController() : this(new DbBookContext())
+        {
+        }
+
+        public BookController(IBookContext bookContext)
+        {
+            if (bookContext == null)
+                throw new ArgumentNullException();
+            _bookContext = bookContext;
+        }
 
         public ActionResult CreateBook()
         {
@@ -23,7 +33,7 @@ namespace testnorm.Controllers
         {
             if (ModelState.IsValid)
             {
-                BaseTest.instance.AddBook(book);
+                _bookContext.AddBook(book);
             }
             else
             {

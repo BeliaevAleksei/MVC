@@ -1,10 +1,10 @@
-﻿@model  List<testnorm.Models.Book>
+﻿@model  testnorm.Models.IndexListView
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
     
-    @foreach (var book in Model)
+    @foreach (var book in Model.books)
 {
         <h2>Название книги: @book.Name</h2>
         <p>Жанр: @book.Genre</p>
@@ -12,6 +12,19 @@
         @Html.ActionLink("Информация", "Details", new { id = book.Id }, null)     
         <hr />        
 }  
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        @foreach (int index in Enumerable.Range(Model.currentPage, 5))
+        {
+            <li class="page-item">
+                @Html.ActionLink(index.ToString(), "Index", new { currentPage = index }, new { @class = "page-link" })
+            </li>
+        }
+    </ul>
+</nav>
+
+
 @Html.ActionLink("Добавить книгу", "../book/CreateBook")  
 
 

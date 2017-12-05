@@ -9,27 +9,6 @@
 </script>
 <div class="row">
     <div class="col-md-8">
-        @*<div class="display-label">
-            <h2>@Html.DisplayNameFor(model => model.Name)</h2>
-        </div>
-        <div class="display-field">
-            <h2>@Html.DisplayFor(model => model.Name)</h2>
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Genre)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Genre)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Author)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Author)
-        </div>*@
-
         <h2>Название книги: @Model.Name</h2>
         <p>Жанр: @Model.Genre</p>
         <p>Автор:  @Model.Author</p>
@@ -42,7 +21,7 @@
     </div>
     <div class="col-md-4">
         <h1>Отзывы</h1>
-            @Html.Partial("ReviewPartial", testnorm.Models.BaseTest.instance.Rewiews.Where(x => x.IdBook == Model.Id).ToList())
+            @Html.Partial("ReviewPartial", Model.Reviews)
         
     </div>
 </div>

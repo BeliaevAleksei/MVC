@@ -9,15 +9,40 @@ namespace testnorm.Controllers
 {
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
+        private const int _PAGE_SIZE = 5;
+        private IBookContext _bookContext;
 
-        public ActionResult Index()
+        public HomeController() : this(new DbBookContext())
         {
-            BaseTest.instance.Books.Sort();
-            var books = BaseTest.instance.Books;
-            return View(books);
         }
+
+        public HomeController(IBookContext bookContext)
+        {
+            if (bookContext == null)
+                throw new ArgumentNullException();
+            _bookContext = bookContext;
+        }
+
+        public ActionResult Index(int currentPage = 1)
+        {
+            if (currentPage < 1)
+            {
+                currentPage = 1;
+            }
+            var paginatorNum = currentPage - 2;
+            if (paginatorNum < 1)
+            {
+                paginatorNum = 1;
+            }
+            var indexListView = new IndexListView()
+            {
+                books = _bookContext.GetRange((currentPage - 1) * _PAGE_SIZE, _PAGE_SIZE),
+                currentPage = paginatorNum,
+                totalPage = (int)(_bookContext.Count() / _PAGE_SIZE + 0.5)
+            };
+            return View(indexListView);
+        }
+
         public ActionResult About()
         {
             return View();
@@ -28,9 +53,9 @@ namespace testnorm.Controllers
             return View();
         }
 
-        public ActionResult Details(int Id = 1)
+        public ActionResult Details(int Id = 0)
         {
-            var book = BaseTest.instance.Books.FirstOrDefault(x => x.Id == Id);
+            var book = _bookContext.GetBook(Id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -40,7 +65,7 @@ namespace testnorm.Controllers
 
         public ActionResult EditBook(int Id)
         {
-            var book = BaseTest.instance.Books.FirstOrDefault(x => x.Id == Id);
+            var book = _bookContext.GetBook(Id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -51,8 +76,12 @@ namespace testnorm.Controllers
         [HttpPost]
         public ActionResult EditBook(Book book)
         {
-            BaseTest.instance.Books.RemoveAll(x => x.Id == book.Id);
-            BaseTest.instance.Books.Add(book);
+            Book first = _bookContext.GetBook(book.Id);
+
+            if (first == null)
+                return HttpNotFound();
+
+            _bookContext.Update(book);
             return RedirectToAction("Details", "Home", new { id = book.Id });
         }
 

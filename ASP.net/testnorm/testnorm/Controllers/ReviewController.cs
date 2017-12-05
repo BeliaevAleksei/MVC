@@ -9,12 +9,26 @@ namespace testnorm.Controllers
 {
     public class ReviewController : Controller
     {
-        //
-        // GET: /Review/
+        private IBookContext _bookContext;
+        private IBookReviewContext _reviewContext;
+
+        public ReviewController() : this(new DbBookContext(), new DbBookReviewContext())
+        {
+        }
+
+        public ReviewController(IBookContext bookContext, IBookReviewContext reviewContext)
+        {
+            if (bookContext == null)
+                throw new ArgumentNullException();
+            if (reviewContext == null)
+                throw new ArgumentNullException();
+            _bookContext = bookContext;
+            _reviewContext = reviewContext;
+        }
 
         public ActionResult Create(int BookId, string BookName)
         {
-            if(BaseTest.instance.Books.All(x => x.Id != BookId))
+            if(_bookContext.GetBook(BookId) == null)
                 return HttpNotFound();
             var reviews = new BookReview() { IdBook = BookId, BookName = BookName };
             return View(reviews);
@@ -25,7 +39,7 @@ namespace testnorm.Controllers
         {
             if (ModelState.IsValid)
             {
-                BaseTest.instance.AddReview(reviews);
+                _bookContext.AddReview(reviews);
             }
             else
             {
@@ -37,28 +51,14 @@ namespace testnorm.Controllers
         [HttpPost]
         public void ReportOffensiveReview(int reviewId, string reason)
         {
-            var review = BaseTest.Instance.Reviews.FirstOrDefault(x => x.Id == reviewId);
-            if (review == null)
-            {
-                Response.StatusCode = 404;
-                return;
-            }
-
-            review.IsOffensive = true;
-            review.ReportReason = reason;
+            _reviewContext.Report(reviewId, reason, true);
         }
 
         [HttpPost]
         public int IncrementAndGetLikes(int reviewId)
         {
-            var review = BaseTest.Instance.Reviews.FirstOrDefault(x => x.Id == reviewId);
-            if (review == null)
-            {
-                Response.StatusCode = 404;
-                return -1;
-            }
-
-            return ++review.Likes;
+            var likesCount = _reviewContext.IncrementAndGetLikes(reviewId);
+            return likesCount;
         }
 
     }
